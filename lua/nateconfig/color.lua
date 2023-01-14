@@ -31,7 +31,8 @@ require('rose-pine').setup({
 		}
 		-- or set all headings at once
 		-- headings = 'subtle'
-	},
+	
+    },
 
 	-- Change specific vim highlight groups
 	highlight_groups = {

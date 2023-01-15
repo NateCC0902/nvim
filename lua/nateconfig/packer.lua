@@ -71,4 +71,6 @@ return require('packer').startup(function(use)
       as = 'rose-pine'
   })
 
+  use "JASONews/glow-hover"
+
 end)

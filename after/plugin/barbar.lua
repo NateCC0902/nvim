@@ -65,13 +65,13 @@ require'bufferline'.setup {
     {enabled = true, icon = 'ﬀ'}, -- ERROR
     {enabled = false}, -- WARN
     {enabled = false}, -- INFO
-    {enabled = true},  -- HINT
+    {enabled = false},  -- HINT
 
     -- OR `vim.diagnostic.severity`
     [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
     [vim.diagnostic.severity.WARN] = {enabled = false},
     [vim.diagnostic.severity.INFO] = {enabled = false},
-    [vim.diagnostic.severity.HINT] = {enabled = true},
+    [vim.diagnostic.severity.HINT] = {enabled = false},
   },
 
   -- Excludes buffers from the tabline

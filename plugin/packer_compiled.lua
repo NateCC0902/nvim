@@ -125,6 +125,11 @@ _G.packer_plugins = {
     path = "/Users/natesbiglaptop/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["glow-hover"] = {
+    loaded = true,
+    path = "/Users/natesbiglaptop/.local/share/nvim/site/pack/packer/start/glow-hover",
+    url = "https://github.com/JASONews/glow-hover"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/natesbiglaptop/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",

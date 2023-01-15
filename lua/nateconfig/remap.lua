@@ -18,9 +18,8 @@ vim.keymap.set("n","<A-k>","15kzz")
 vim.keymap.set("v","J",":m '>+1<CR>gv=gv")
 vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
 
+vim.keymap.set("n","F3","<cmd>lua vim.lsp.buf.signature_help()<CR>")
+vim.keymap.set("n","F2","<cmd>lua vim.lsp.buf.rename()<CR>")
 
-
-
-
-
+vim.keymap.set("v","<leader>p","\"_dP")
 

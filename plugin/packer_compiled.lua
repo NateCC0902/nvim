@@ -135,6 +135,11 @@ _G.packer_plugins = {
     path = "/Users/natesbiglaptop/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/Users/natesbiglaptop/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/Users/natesbiglaptop/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",

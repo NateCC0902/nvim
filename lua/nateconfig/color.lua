@@ -31,7 +31,7 @@ require('rose-pine').setup({
 		}
 		-- or set all headings at once
 		-- headings = 'subtle'
-	
+
     },
 
 	-- Change specific vim highlight groups
@@ -43,7 +43,8 @@ require('rose-pine').setup({
 --colorset
 --vim.api.nvim_set_hl(0,"normal", {bg= "none"})
 --vim.api.nvim_set_hl(0,"normalFloat", {bg= "none"})
-vim.cmd('colorscheme rose-pine')
+--vim.cmd('colorscheme rose-pine')
+vim.cmd[[colorscheme tokyonight-moon]]
 
 
 

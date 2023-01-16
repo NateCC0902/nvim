@@ -1,7 +1,7 @@
 
 --line number
+vim.cmd[[set rnu!]]
 vim.cmd[[set nu!]]
-
 --Making tab move 4 cells
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

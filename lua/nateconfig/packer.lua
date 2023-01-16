@@ -72,5 +72,7 @@ return require('packer').startup(function(use)
   })
 
   use "JASONews/glow-hover"
+  
+  use 'folke/tokyonight.nvim'
 
 end)

@@ -23,3 +23,6 @@ vim.keymap.set("n","F2","<cmd>lua vim.lsp.buf.rename()<CR>")
 
 vim.keymap.set("v","<leader>p","\"_dP")
 
+vim.keymap.set("n", "<leader>co", "<cmd> Copilot enable <CR>")
+vim.keymap.set("n", "<leader>cos", "<cmd> Copilot_disable <CR>")
+

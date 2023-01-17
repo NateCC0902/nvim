@@ -29,6 +29,7 @@ lsp.set_preferences({
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 local cmp = require('cmp')
+
 local cmp_config = lsp.defaults.cmp_config({
     --window = {completion = cmp.config.window.bordered()}
 
@@ -40,6 +41,13 @@ local cmp_config = lsp.defaults.cmp_config({
       border = 'rounded',
     },
   },
+    sources = {
+        {name = "buffer"},
+        {name = "path"},
+    },
+    mapping = {
+        ["<tab>"] = cmp.mapping.select_next_item(),
+    },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -53,6 +61,8 @@ local cmp_config = lsp.defaults.cmp_config({
   },
 
 })
+
+
 --
 --lsp.setup_nvim_cmp({
 --  formatting = {

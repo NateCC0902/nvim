@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
   use "JASONews/glow-hover"
 
   use "onsails/lspkind.nvim"
+  
 
   --COLOR SETS
 

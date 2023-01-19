@@ -69,7 +69,13 @@ return require('packer').startup(function(use)
 
   use "onsails/lspkind.nvim"
   
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 
+  use "windwp/nvim-ts-autotag"
+  
   --COLOR SETS
 
   use 'folke/tokyonight.nvim'

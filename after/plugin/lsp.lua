@@ -29,9 +29,46 @@ lsp.set_preferences({
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 local cmp = require('cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local handlers = require('nvim-autopairs.completion.handlers')
+
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done({
+    filetypes = {
+      -- "*" is a alias to all filetypes
+      ["*"] = {
+        ["("] = {
+          kind = {
+            cmp.lsp.CompletionItemKind.Function,
+            cmp.lsp.CompletionItemKind.Method,
+          },
+          handler = handlers["*"]
+        }
+      },
+      lua = {
+        ["("] = {
+          kind = {
+            cmp.lsp.CompletionItemKind.Function,
+            cmp.lsp.CompletionItemKind.Method
+          },
+          ---@param char string
+          ---@param item item completion
+          ---@param bufnr buffer number
+          handler = function(char, item, bufnr)
+            -- Your handler function. Inpect with print(vim.inspect{char, item, bufnr})
+          end
+        }
+      },
+      -- Disable for tex
+      tex = false
+    }
+  })
+ )
 
 local cmp_config = lsp.defaults.cmp_config({
     --window = {completion = cmp.config.window.bordered()}
+
 
     window = {
     completion = {
@@ -41,13 +78,41 @@ local cmp_config = lsp.defaults.cmp_config({
       border = 'rounded',
     },
   },
-    sources = {
-        {name = "buffer"},
-        {name = "path"},
-    },
+--    sources = {
+--        {name = "buffer"},
+--        {name = "path"},
+--    },
+
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+      -- { name = 'luasnip' }, -- For luasnip users.
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users. 
+      { name = 'buffer' },
+    { name = 'path' },
+      { name = 'cmdline' }}),
+
     mapping = {
         ["<tab>"] = cmp.mapping.select_next_item(),
     },
+       mapping = cmp.mapping.preset.insert({
+        ["<Tab>"] = cmp.mapping(function(fallback)
+  if cmp.visible() then
+    cmp.confirm({ select = true})
+  elseif require("luasnip").expand_or_jumpable() then
+    vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+  else
+    fallback()
+  end
+end, { "i", "s" }),
+
+           ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)

@@ -91,7 +91,9 @@ local cmp_config = lsp.defaults.cmp_config({
       -- { name = 'snippy' }, -- For snippy users. 
       { name = 'buffer' },
     { name = 'path' },
-      { name = 'cmdline' }}),
+      { name = 'cmdline' },
+
+  }),
 
     mapping = {
         ["<tab>"] = cmp.mapping.select_next_item(),
@@ -127,7 +129,7 @@ end, { "i", "s" }),
 
 })
 
-
+vim.cmd[[set pumheight=15 ]]
 --
 --lsp.setup_nvim_cmp({
 --  formatting = {
@@ -191,6 +193,7 @@ local kind_highlights = {
   CmpItemKindInterface = { fg = "#D8EEEB", bg = "#58B5A8" },
   CmpItemKindColor = { fg = "#D8EEEB", bg = "#58B5A8" },
   CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
+
 }
 
 for k, v in pairs(kind_highlights) do

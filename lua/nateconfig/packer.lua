@@ -75,8 +75,10 @@ return require('packer').startup(function(use)
   }
 
   use "windwp/nvim-ts-autotag"
-  
-  --COLOR SETS
+
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
+ --COLOR SETS
 
   use 'folke/tokyonight.nvim'
   use({ 'rose-pine/neovim',as = 'rose-pine'})

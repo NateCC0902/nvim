@@ -1,5 +1,4 @@
-
-vim.g.mapleader= " "
+vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -12,17 +11,19 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>")
 vim.keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>")
 
-vim.keymap.set("n","<A-j>","15jzz")
-vim.keymap.set("n","<A-k>","15kzz")
+vim.keymap.set("n", "<A-j>", "15jzz")
+vim.keymap.set("n", "<A-k>", "15kzz")
 
-vim.keymap.set("v","J",":m '>+1<CR>gv=gv")
-vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n","F3","<cmd>lua vim.lsp.buf.signature_help()<CR>")
-vim.keymap.set("n","F2","<cmd>lua vim.lsp.buf.rename()<CR>")
+vim.keymap.set("n", "F3", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+vim.keymap.set("n", "F2", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
-vim.keymap.set("v","<leader>p","\"_dP")
+vim.keymap.set("v", "<leader>p", "\"_dP")
 
 vim.keymap.set("n", "<leader>co", "<cmd> Copilot enable <CR>")
 vim.keymap.set("n", "<leader>cos", "<cmd> Copilot_disable <CR>")
+
+vim.keymap.set("n", "fm", "<cmd> LspZeroFormat <CR>")
 

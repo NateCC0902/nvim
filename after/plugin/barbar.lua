@@ -99,7 +99,7 @@ require'bufferline'.setup {
 
   -- Configure icons on the bufferline.
   icon_separator_active = '▎',
-  icon_separator_inactive = '▎',
+  icon_separator_inactive = '',
   icon_close_tab = '',
   icon_close_tab_modified = '●',
   icon_pinned = '車',
@@ -110,10 +110,10 @@ require'bufferline'.setup {
   insert_at_start = false,
 
   -- Sets the maximum padding width with which to surround each tab
-  maximum_padding = 1,
+  maximum_padding = 3,
 
   -- Sets the minimum padding width with which to surround each tab
-  minimum_padding = 1,
+  minimum_padding = 3,
 
   -- Sets the maximum buffer name length.
   maximum_length = 30,

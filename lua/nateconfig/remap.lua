@@ -19,6 +19,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "F3", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 vim.keymap.set("n", "F2", "<cmd>lua vim.lsp.buf.rename()<CR>")
+vim.keymap.set("n", "<leader>cs", "<cmd>lua require'telescope.builtin'.colorscheme{} <CR>")
+
 
 vim.keymap.set("v", "<leader>p", "\"_dP")
 
@@ -26,4 +28,6 @@ vim.keymap.set("n", "<leader>co", "<cmd> Copilot enable <CR>")
 vim.keymap.set("n", "<leader>cos", "<cmd> Copilot_disable <CR>")
 
 vim.keymap.set("n", "fm", "<cmd> LspZeroFormat <CR>")
+
+vim.keymap.set("n", "<C-o>", "<cmd> SymbolsOutline <CR>")
 

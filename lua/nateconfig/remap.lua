@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>cs", "<cmd>lua require'telescope.builtin'.colorsche
 vim.keymap.set("v", "<leader>p", "\"_dP")
 
 vim.keymap.set("n", "<leader>co", "<cmd> Copilot enable <CR>")
-vim.keymap.set("n", "<leader>cos", "<cmd> Copilot_disable <CR>")
+vim.keymap.set("n", "<leader>cos", "<cmd> Copilot disable <CR>")
 
 vim.keymap.set("n", "fm", "<cmd> LspZeroFormat <CR>")
 

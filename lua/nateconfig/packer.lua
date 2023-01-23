@@ -116,7 +116,7 @@ return require('packer').startup(function(use)
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use 'Mofiqul/dracula.nvim'
     use 'fenetikm/falcon'
-
+    use { 'kartikp10/noctis.nvim', requires = { 'rktjmp/lush.nvim' } }
     --COLOR SETS
 
 end)

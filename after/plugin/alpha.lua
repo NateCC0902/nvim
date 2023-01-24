@@ -119,11 +119,11 @@ end
 local default_header = {
 	type = "text",
 	val = {
-		[[███    ██ ███████  ██████  ██    ██ ██ ███    ███]],
-		[[████   ██ ██      ██    ██ ██    ██ ██ ████  ████]],
-		[[██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██]],
-		[[██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██]],
-		[[██   ████ ███████  ██████    ████   ██ ██      ██]],
+		-- [[███    ██ ███████  ██████  ██    ██ ██ ███    ███]],
+		-- [[████   ██ ██      ██    ██ ██    ██ ██ ████  ████]],
+		-- [[██ ██  ██ █████   ██    ██ ██    ██ ██ ██ ████ ██]],
+		-- [[██  ██ ██ ██      ██    ██  ██  ██  ██ ██  ██  ██]],
+		-- [[██   ████ ███████  ██████    ████   ██ ██      ██]],
 
 		-- [[                               __                ]],
 		-- [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
@@ -131,6 +131,30 @@ local default_header = {
 		-- [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
 		-- [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
 		-- [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+    
+      [[                                              ___  ]],
+      [[                                           ,o88888 ]],
+      [[                                        ,o8888888' ]],
+      [[                  ,:o:o:oooo.        ,8O88Pd8888"  ]],
+      [[              ,.::.::o:ooooOoOoO. ,oO8O8Pd888'"    ]],
+      [[            ,.:.::o:ooOoOoOO8O8OOo.8OOPd8O8O"      ]],
+      [[           , ..:.::o:ooOoOOOO8OOOOo.FdO8O8"        ]],
+      [[          , ..:.::o:ooOoOO8O888O8O,COCOO"          ]],
+      [[         , . ..:.::o:ooOoOOOO8OOOOCOCO"            ]],
+      [[          . ..:.::o:ooOoOoOO8O8OCCCC"o             ]],
+      [[             . ..:.::o:ooooOoCoCCC"o:o             ]],
+      [[             . ..:.::o:o:,cooooCo"oo:o:            ]],
+      [[          `   . . ..:.:cocoooo"'o:o:::'            ]],
+      [[          .`   . ..::ccccoc"'o:o:o:::'             ]],
+      [[         :.:.    ,c:cccc"':.:.:.:.:.'              ]],
+      [[       ..:.:"'`::::c:"'..:.:.:.:.:.'               ]],
+      [[     ...:.'.:.::::"'    . . . . .'                 ]],
+      [[    .. . ....:."' `   .  . . ''                    ]],
+      [[  . . . ...."'                                     ]],
+      [[  .. . ."'                                         ]],
+      [[ .                                                 ]],
+      [[                                                   ]],
+
 	},
 	opts = {
 		position = "center",
@@ -144,7 +168,7 @@ local section_mru = {
 	val = {
 		{
 			type = "text",
-			val = "Recent files",
+			val = "📸 Recent files",
 			opts = {
 				hl = "SpecialComment",
 				shrink_margin = false,
@@ -165,17 +189,15 @@ local section_mru = {
 local buttons = {
 	type = "group",
 	val = {
-		{ type = "text", val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
+		{ type = "text", val = "🛠️Quick links", opts = { hl = "SpecialComment", position = "center" } },
 		{ type = "padding", val = 1 },
-		dashboard.button("a", "  New file", "<cmd>ene<CR>"),
-        dashboard.button("r", "  Recent ", "<cmd>Telescope oldfiles <CR>"),
-        dashboard.button("ff", "  Find file", "<cmd>Telescope find_files<CR>"),
-        dashboard.button("fg", "  Live grep", "<cmd>Telescope live_grep<CR>"),
+		dashboard.button("a", "🎬  New file", "<cmd>ene<CR>"),
+        dashboard.button("r", "💾  Recent ", "<cmd>Telescope oldfiles <CR>"),
+        dashboard.button("ff", "🛰️  Find file", "<cmd>Telescope find_files<CR>"),
+        dashboard.button("fg", "🐾  Live grep", "<cmd>Telescope live_grep<CR>"),
 
-        dashboard.button("co", "  Colorschemes", "<cmd> lua require'telescope.builtin'.colorscheme{} <CR>"),
-
-		dashboard.button("u", "  Update plugins", ":PackerSync <CR>"),
-		dashboard.button("q", "  Quit", "<cmd>qa<CR>"),
+        dashboard.button("co", "🎨  Colorschemes", "<cmd> lua require'telescope.builtin'.colorscheme{} <CR>"),
+		dashboard.button("q", "🚒  Quit", "<cmd>qa<CR>"),
 	},
 	position = "center",
 }
@@ -183,12 +205,12 @@ local buttons = {
 local projects = {
     type = "group",
     val = {
-        { type = "text", val = "Projects", opts = { hl = "SpecialComment", position = "center" } },
+        { type = "text", val = "🗂️ Projects", opts = { hl = "SpecialComment", position = "center" } },
         { type = "padding", val = 1 },
-        dashboard.button("pr", "  Projects", "<cmd>e /Users/natesbiglaptop/IdeaProjects <CR>"),
-        dashboard.button("ty","  Typescirpt", "<cmd>e /Users/natesbiglaptop/IdeaProjects/TypeScriptyPlayground <CR>"),
-        dashboard.button("re","  Typescirpt React", "<cmd>e /Users/natesbiglaptop/IdeaProjects/ReactPlayground/ts-app <CR>"),
-        dashboard.button("cn", "  Configuration", "<cmd>e ~/.config/nvim/ <CR>"),
+        dashboard.button("pr", "🛸  Projects", "<cmd>e /Users/natesbiglaptop/IdeaProjects <CR>"),
+        dashboard.button("ty", "🫐  Typescirpt", "<cmd>e /Users/natesbiglaptop/IdeaProjects/TypeScriptyPlayground <CR>"),
+        dashboard.button("re", "⚛️   Typescirpt React", "<cmd>e /Users/natesbiglaptop/IdeaProjects/ReactPlayground/ts-app <CR>"),
+        dashboard.button("cn", "⚙️   Configuration", "<cmd>e ~/.config/nvim/ <CR>"),
 
     },
     position = "center",

@@ -61,8 +61,6 @@ return require('packer').startup(function(use)
 
     use "yamatsum/nvim-cursorline"
 
-    use { 'michaelb/sniprun', run = 'bash ./install.sh' }
-
     use { "catppuccin/nvim", as = "catppuccin" }
 
     use "JASONews/glow-hover"
@@ -110,6 +108,9 @@ return require('packer').startup(function(use)
     use 'simrat39/symbols-outline.nvim'
 
     use 'ggandor/leap.nvim'
+
+    use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+
 
     --COLOR SETS
     use 'Yazeed1s/minimal.nvim'

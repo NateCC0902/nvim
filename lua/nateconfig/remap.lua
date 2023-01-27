@@ -31,3 +31,7 @@ vim.keymap.set("n", "<C-o>", "<cmd> SymbolsOutline <CR>")
 
 vim.keymap.set("n", "<C-a>", "^")
 vim.keymap.set("n", "<C-e>", "$")
+
+
+vim.keymap.set("v", "<C-a>", "^")
+vim.keymap.set("v", "<C-e>", "$")

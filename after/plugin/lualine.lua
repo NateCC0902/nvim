@@ -11,7 +11,7 @@ local colors = {
 local bubbles_theme = {
   normal = {
     a = { fg = "none", bg = colors.violet },
-    b = { fg = colors.white, bg = colors.grey },
+    b = { fg = colors.white, bg = "none" },
     c = { fg = colors.black, bg = "none" },
   },
 

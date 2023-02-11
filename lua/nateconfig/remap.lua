@@ -35,3 +35,10 @@ vim.keymap.set("n", "<C-e>", "$")
 
 vim.keymap.set("v", "<C-a>", "^")
 vim.keymap.set("v", "<C-e>", "$")
+
+vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>q', ':q<CR>', { noremap = true, silent = false })
+
+
+vim.keymap.set('n', '<C-+>', ':vertical resize +10<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<C-_>', ':vertical resize -10<CR>', { noremap = true, silent = false })

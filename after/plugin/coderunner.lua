@@ -2,10 +2,10 @@ require('code_runner').setup({
     -- put here the commands by filetype
     mode = "term",
     focus = false,
-    startinsert = false, 
+    startinsert = false,
     term = {
         position = "vert",
-        size = 50,
+        size = 60,
     },
     filetype = {
         java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -16,5 +16,6 @@ require('code_runner').setup({
 
 })
 
-vim.keymap.set('n', '<C-f>', ':w<CR>:RunCode<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<C-f>', ":RunCode <CR>", { noremap = true, silent = false })
 vim.keymap.set('n', '<C-s>', ':RunClose<CR>', { noremap = true, silent = false })
+

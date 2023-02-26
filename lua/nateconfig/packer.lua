@@ -111,6 +111,7 @@ return require('packer').startup(function(use)
 
     use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
 
+    use 'github/copilot.vim'
 
     --COLOR SETS
     use 'Yazeed1s/minimal.nvim'

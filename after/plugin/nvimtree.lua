@@ -6,7 +6,7 @@ vim.keymap.set("n", "<C-t>", "<cmd> NvimTreeToggle <CR>")
 vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeFocus <CR>")
 
 require("nvim-tree").setup({
-  sort_by = "name",
+  sort_by = "extension",
   view = {
     adaptive_size = true,
     hide_root_folder = true,

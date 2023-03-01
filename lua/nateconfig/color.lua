@@ -45,5 +45,5 @@ require('rose-pine').setup({
 --vim.api.nvim_set_hl(0,"normal", {bg= "none"})
 --vim.api.nvim_set_hl(0,"normalFloat", {bg= "none"})
 --vim.cmd('colorscheme rose-pine')
-vim.cmd [[colorscheme dracula]]
+vim.cmd [[colorscheme catppuccin-macchiato]]
 

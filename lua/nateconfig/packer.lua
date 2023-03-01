@@ -114,6 +114,7 @@ return require('packer').startup(function(use)
     use 'github/copilot.vim'
 
     --COLOR SETS
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'Yazeed1s/minimal.nvim'
     use 'folke/tokyonight.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine' })

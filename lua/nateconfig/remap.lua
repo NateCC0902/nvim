@@ -33,6 +33,9 @@ vim.keymap.set("n", "<C-a>", "^")
 vim.keymap.set("n", "<C-e>", "$")
 
 
+vim.keymap.set("i", "<C-a>", "<C-o>^")
+vim.keymap.set("i", "<C-e>", "<C-o>$")
+
 vim.keymap.set("v", "<C-a>", "^")
 vim.keymap.set("v", "<C-e>", "$")
 

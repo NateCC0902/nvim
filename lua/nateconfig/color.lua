@@ -39,6 +39,16 @@ require('rose-pine').setup({
         ColorColumn = { bg = 'rose' }
     }
 })
+local catppuccin = require('catppuccin')
+local cp = require('catppuccin.palettes').get_palette()
+catppuccin.setup({
+    custom_highlights = function()
+        return {
+            NormalFloat = { bg = cp.base },
+            Pmenu = { bg = cp.base },
+            PmenuSel = { fg = cp.text, bg = cp.surface0, style = { 'bold' } },
+        }end
+})
 
 
 --colorset

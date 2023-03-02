@@ -72,12 +72,16 @@ local cmp_config = lsp.defaults.cmp_config({
 
 
     window = {
-        completion = {
+    --[[     completion = {
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
             col_offset = -3,
             side_padding = 0,
             border = 'rounded',
         },
+      ]]   
+      documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered(),
+
     },
     --    sources = {
     --        {name = "buffer"},

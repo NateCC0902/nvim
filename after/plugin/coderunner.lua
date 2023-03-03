@@ -18,7 +18,7 @@ require('code_runner').setup({
         ["~/IdeaProjects/JavaLeetcode/HelloWorld"] = {
             name = "JavaProjectPlayground",
             description = "A Simple Project",
-            command = "mvn exec:java",
+            command = "mvn clean compile exec:java",
         }
     },
 

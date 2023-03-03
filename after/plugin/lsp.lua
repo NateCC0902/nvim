@@ -69,18 +69,24 @@ cmp.event:on(
 
 local cmp_config = lsp.defaults.cmp_config({
     --window = {completion = cmp.config.window.bordered()}
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            require'luasnip'.lsp_expand(args.body)
+        end
+    },
 
 
     window = {
-    --[[     completion = {
+        --[[     completion = {
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
             col_offset = -3,
             side_padding = 0,
             border = 'rounded',
         },
-      ]]   
-      documentation = cmp.config.window.bordered(),
-      completion = cmp.config.window.bordered(),
+      ]]
+        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
 
     },
     --    sources = {
@@ -90,8 +96,8 @@ local cmp_config = lsp.defaults.cmp_config({
 
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
+       -- { name = 'vsnip' }, -- For vsnip users.
+        { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
         { name = 'buffer' },

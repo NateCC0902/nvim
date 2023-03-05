@@ -8,6 +8,16 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
+    }
+
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
@@ -106,8 +116,6 @@ return require('packer').startup(function(use)
     }
 
     use 'simrat39/symbols-outline.nvim'
-
-    use 'ggandor/leap.nvim'
 
     use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
 

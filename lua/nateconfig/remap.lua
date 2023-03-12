@@ -34,11 +34,11 @@ vim.keymap.set("n", "<C-a>", "^")
 vim.keymap.set("n", "<C-e>", "$")
 
 
-vim.keymap.set("i", "<C-a>", "<C-o>^")
-vim.keymap.set("i", "<C-e>", "<C-o>$")
+vim.keymap.set("i", "<C-a>", "<C-o>^", { noremap = true, silent = false })
+vim.keymap.set("i", "<C-e>", "<C-o>$", { noremap = true, silent = false })
 
-vim.keymap.set("v", "<C-a>", "^")
-vim.keymap.set("v", "<C-e>", "$")
+vim.keymap.set("v", "<C-a>", "^", { noremap = true, silent = false })
+vim.keymap.set("v", "<C-e>", "$", { noremap = true, silent = false })
 
 vim.keymap.set('n', '<C-w>', ':w<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = false })

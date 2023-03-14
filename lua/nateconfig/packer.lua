@@ -9,6 +9,14 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
 
+    use({
+        'Wansmer/treesj',
+        requires = { 'nvim-treesitter' },
+        config = function()
+            require('treesj').setup({ --[[ your config ]] })
+        end,
+    })
+
     use {
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended

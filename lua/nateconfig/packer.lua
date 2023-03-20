@@ -27,6 +27,18 @@ return require('packer').startup(function(use)
     }
 
     use {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
+
+
+    use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
@@ -78,8 +90,6 @@ return require('packer').startup(function(use)
     use { 'romgrk/barbar.nvim', wants = 'nvim-web-devicons' }
 
     use "yamatsum/nvim-cursorline"
-
-    use { "catppuccin/nvim", as = "catppuccin" }
 
     use "JASONews/glow-hover"
 
@@ -137,7 +147,9 @@ return require('packer').startup(function(use)
     use 'Mofiqul/dracula.nvim'
     use 'fenetikm/falcon'
     use { 'kartikp10/noctis.nvim', requires = { 'rktjmp/lush.nvim' } }
+    use 'tanvirtin/monokai.nvim'
     --COLOR SETS
+
 
 
 end)

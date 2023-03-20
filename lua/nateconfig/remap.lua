@@ -11,8 +11,8 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<leader>n", "<cmd> set nu! <CR>")
 vim.keymap.set("n", "<leader>rn", "<cmd> set rnu! <CR>")
 
-vim.keymap.set("n", "<C-j>", "15jzz")
-vim.keymap.set("n", "<C-k>", "15kzz")
+vim.keymap.set("n", "<A-j>", "15jzz")
+vim.keymap.set("n", "<A-k>", "15kzz")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -35,10 +35,10 @@ vim.keymap.set("n", "<C-e>", "$")
 
 
 vim.keymap.set("i", "<C-a>", "<C-o>^", { noremap = true, silent = false })
-vim.keymap.set("i", "<C-e>", "<C-o>$", { noremap = true, silent = false })
+vim.keymap.set("i", "<C-e>", "<Esc>A", { noremap = true, silent = true })
 
 vim.keymap.set("v", "<C-a>", "^", { noremap = true, silent = false })
-vim.keymap.set("v", "<C-e>", "$", { noremap = true, silent = false })
+vim.keymap.set("v", "<C-e>", "$", { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-w>', ':w<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = false })

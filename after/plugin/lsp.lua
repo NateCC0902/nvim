@@ -72,7 +72,7 @@ local cmp_config = lsp.defaults.cmp_config({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require'luasnip'.lsp_expand(args.body)
+            require 'luasnip'.lsp_expand(args.body)
         end
     },
 
@@ -96,7 +96,7 @@ local cmp_config = lsp.defaults.cmp_config({
 
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-       -- { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'vsnip' }, -- For vsnip users.
         { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
@@ -106,10 +106,8 @@ local cmp_config = lsp.defaults.cmp_config({
 
     }),
 
-    mapping = {
-        ["<tab>"] = cmp.mapping.select_next_item(),
-    },
     mapping = cmp.mapping.preset.insert({
+        ["<tab>"] = cmp.mapping.select_next_item(),
         -- ["<Tab>"] = cmp.mapping(function(fallback)
         --     if cmp.visible() then
         --         cmp.confirm({ select = true })
@@ -124,6 +122,7 @@ local cmp_config = lsp.defaults.cmp_config({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-q>'] = cmp.mapping.abort(),
+        ['<C-e'] = vim.NIL,
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     formatting = {
@@ -140,7 +139,11 @@ local cmp_config = lsp.defaults.cmp_config({
 
 })
 
+
+
 vim.cmd [[set pumheight=15 ]]
+
+
 --
 --lsp.setup_nvim_cmp({
 --  formatting = {
@@ -212,3 +215,4 @@ for k, v in pairs(kind_highlights) do
 end
 
 cmp.setup(cmp_config)
+

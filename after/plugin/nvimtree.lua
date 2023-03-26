@@ -1,10 +1,6 @@
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-
-vim.keymap.set("n", "<C-t>", "<cmd> NvimTreeToggle <CR>")
-vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeFocus <CR>")
-
 require("nvim-tree").setup({
   sort_by = "extension",
   view = {

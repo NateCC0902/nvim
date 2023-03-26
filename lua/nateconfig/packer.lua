@@ -4,10 +4,8 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-
 
     use({
         'Wansmer/treesj',
@@ -16,6 +14,13 @@ return require('packer').startup(function(use)
             require('treesj').setup({ --[[ your config ]] })
         end,
     })
+
+    use {
+        'rmagatti/goto-preview',
+        config = function()
+            require('goto-preview').setup {}
+        end
+    }
 
     use {
         'phaazon/hop.nvim',
@@ -53,7 +58,7 @@ return require('packer').startup(function(use)
         requires = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
     }
 
     use {
@@ -112,7 +117,7 @@ return require('packer').startup(function(use)
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons", -- optional dependency
         },
-        after = "nvim-web-devicons", -- keep this if you're using NvChad
+        after = "nvim-web-devicons",       -- keep this if you're using NvChad
         config = function()
             require("barbecue").setup()
         end,
@@ -149,7 +154,4 @@ return require('packer').startup(function(use)
     use { 'kartikp10/noctis.nvim', requires = { 'rktjmp/lush.nvim' } }
     use 'tanvirtin/monokai.nvim'
     --COLOR SETS
-
-
-
 end)

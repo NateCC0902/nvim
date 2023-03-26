@@ -24,5 +24,3 @@ require('code_runner').setup({
 
 })
 
-vim.keymap.set('n', '<C-f>', ":RunCode <CR>", { noremap = true, silent = false })
-vim.keymap.set('n', '<C-s>', ':RunClose<CR>', { noremap = true, silent = false })

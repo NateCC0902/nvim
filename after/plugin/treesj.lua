@@ -29,5 +29,4 @@ tsj.setup({
   dot_repeat = true,
 })
 
-vim.keymap.set('n', 'zs', require('treesj').toggle)
 

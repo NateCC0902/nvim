@@ -31,14 +31,21 @@ vim.keymap.set("n", "fm", "<cmd> LspZeroFormat <CR>")
 vim.keymap.set("n", "<C-o>", "<cmd> SymbolsOutline <CR>")
 
 vim.keymap.set("n", "<C-a>", "^")
-vim.keymap.set("n", "<C-d>", "$")
+vim.keymap.set("n", "<C-e>", "$")
 
 
 vim.keymap.set("i", "<C-a>", "<C-o>^", { noremap = true, silent = false })
-vim.keymap.set("i", "<C-d>", "<Esc>A", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-e>", "<Esc>A", { noremap = true, silent = true })
+
+vim.keymap.set("i", "<C-w>", "<C-o>db", { noremap = true, silent = false })
+vim.keymap.set("i", "<C-b>", "<C-o>dw", { noremap = true, silent = false })
+
+vim.keymap.set("i", "<C-,>", "<C-o>b", { noremap = true, silent = false })
+vim.keymap.set("i", "<C-.>", "<C-o>w", { noremap = true, silent = false })
+
 
 vim.keymap.set("v", "<C-a>", "^", { noremap = true, silent = false })
-vim.keymap.set("v", "<C-d>", "$", { noremap = true, silent = true })
+vim.keymap.set("v", "<C-e>", "$", { noremap = true, silent = true })
 
 vim.keymap.set('n', '<C-w>', ':w<CR>', { noremap = true, silent = false })
 vim.keymap.set('n', '<leader>w', ':w<CR>', { noremap = true, silent = false })

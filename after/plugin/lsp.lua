@@ -72,11 +72,10 @@ local cmp_config = lsp.defaults.cmp_config({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
+            print(args.body)
             require 'luasnip'.lsp_expand(args.body)
         end
     },
-
-
     window = {
         --[[     completion = {
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
@@ -87,7 +86,6 @@ local cmp_config = lsp.defaults.cmp_config({
       ]]
         documentation = cmp.config.window.bordered(),
         completion = cmp.config.window.bordered(),
-
     },
     --    sources = {
     --        {name = "buffer"},
@@ -105,7 +103,6 @@ local cmp_config = lsp.defaults.cmp_config({
         { name = 'cmdline' },
 
     }),
-
     mapping = cmp.mapping.preset.insert({
         ["<tab>"] = cmp.mapping.select_next_item(),
         -- ["<Tab>"] = cmp.mapping(function(fallback)
@@ -122,7 +119,7 @@ local cmp_config = lsp.defaults.cmp_config({
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-q>'] = cmp.mapping.abort(),
-        ['<C-e'] = vim.NIL,
+        ['<C-e'] = nil,
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     formatting = {
@@ -136,11 +133,7 @@ local cmp_config = lsp.defaults.cmp_config({
             return kind
         end,
     },
-
 })
-
-
-
 vim.cmd [[set pumheight=15 ]]
 
 
@@ -169,45 +162,35 @@ vim.cmd [[set pumheight=15 ]]
 local kind_highlights = {
     PmenuSel = { bg = "#282C34", fg = "NONE" },
     Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
-
     CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", fmt = "strikethrough" },
     CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE", fmt = "bold" },
     CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE", fmt = "bold" },
     CmpItemMenu = { fg = "#C792EA", bg = "NONE", fmt = "italic" },
-
     CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
     CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
     CmpItemKindEvent = { fg = "#EED8DA", bg = "#B5585F" },
-
     CmpItemKindText = { fg = "#C3E88D", bg = "#9FBD73" },
     CmpItemKindEnum = { fg = "#C3E88D", bg = "#9FBD73" },
     CmpItemKindKeyword = { fg = "#C3E88D", bg = "#9FBD73" },
-
     CmpItemKindConstant = { fg = "#FFE082", bg = "#D4BB6C" },
     CmpItemKindConstructor = { fg = "#FFE082", bg = "#D4BB6C" },
     CmpItemKindReference = { fg = "#FFE082", bg = "#D4BB6C" },
-
     CmpItemKindFunction = { fg = "#EADFF0", bg = "#A377BF" },
     CmpItemKindStruct = { fg = "#EADFF0", bg = "#A377BF" },
     CmpItemKindClass = { fg = "#EADFF0", bg = "#A377BF" },
     CmpItemKindModule = { fg = "#EADFF0", bg = "#A377BF" },
     CmpItemKindOperator = { fg = "#EADFF0", bg = "#A377BF" },
-
     CmpItemKindVariable = { fg = "#C5CDD9", bg = "#7E8294" },
     CmpItemKindFile = { fg = "#C5CDD9", bg = "#7E8294" },
-
     CmpItemKindUnit = { fg = "#F5EBD9", bg = "#D4A959" },
     CmpItemKindSnippet = { fg = "#F5EBD9", bg = "#D4A959" },
     CmpItemKindFolder = { fg = "#F5EBD9", bg = "#D4A959" },
-
     CmpItemKindMethod = { fg = "#DDE5F5", bg = "#6C8ED4" },
     CmpItemKindValue = { fg = "#DDE5F5", bg = "#6C8ED4" },
     CmpItemKindEnumMember = { fg = "#DDE5F5", bg = "#6C8ED4" },
-
     CmpItemKindInterface = { fg = "#D8EEEB", bg = "#58B5A8" },
     CmpItemKindColor = { fg = "#D8EEEB", bg = "#58B5A8" },
     CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
-
 }
 
 for k, v in pairs(kind_highlights) do
@@ -215,4 +198,3 @@ for k, v in pairs(kind_highlights) do
 end
 
 cmp.setup(cmp_config)
-

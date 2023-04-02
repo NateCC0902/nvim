@@ -154,8 +154,8 @@ vim.keymap.set("n", "<C-t>", "<cmd> NvimTreeToggle <CR>")
 vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeFocus <CR>")
 
 --  Hop
-vim.keymap.set('', 's', ':HopWord<CR>', { noremap = true })
-vim.keymap.set('', 'S', ':HopPattern<CR>', { noremap = true })
+vim.keymap.set('', 's',[[<Cmd>lua require('hop').hint_words()<CR>]], {})
+vim.keymap.set('', 'S',[[<Cmd>lua require('hop').hint_vertical()<CR>]], {})
 
 -- goto preview
 
@@ -164,3 +164,4 @@ vim.keymap.set("n", "<leader>t", "<cmd>lua require('goto-preview').goto_preview_
 vim.keymap.set("n", "<leader>r", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", {noremap=true})
 vim.keymap.set("n", "<leader>i", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", {noremap=true})
 vim.keymap.set("n", "<leader>c", "<cmd>lua require('goto-preview').close_all_win()<CR>", {noremap=true})
+vim.keymap.set("n", "<leader>ca", function () vim.lsp.buf.code_action() end, opts) 

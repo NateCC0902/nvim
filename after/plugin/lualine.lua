@@ -1,82 +1,5 @@
--- local colors = {
---   blue   = '#80a0ff',
---   cyan   = '#79dac8',
---   black  = '#080808',
---   white  = '#c6c6c6',
---   red    = '#ff5189',
---   violet = '#d183e8',
---   grey   = '#303030',
--- }
---
--- local bubbles_theme = {
---   normal = {
---     a = { fg = colors.black, bg = colors.violet },
---     b = { fg = colors.black, bg = colors.violet },
---     c = { fg = colors.black, bg = "none" },
---   },
---
---   insert = {
---       a = { fg = colors.black, bg = colors.blue },
---       b = { fg = colors.black, bg = colors.blue },
---       c = { fg = colors.black, bg = "none" },
---   },
---   visual = {
---       a = { fg = colors.black, bg = colors.cyan },
---       b = { fg = colors.black, bg = colors.cyan },
---       c = { fg = colors.black, bg = "none" },
---   },
---   replace = {
---       a = { fg = colors.black, bg = colors.red },
---       b = { fg = colors.black, bg = colors.red },
---       c = { fg = colors.black, bg = "none" },
---   },
---
---   inactive = {
---     a = { fg = colors.white, bg = "none" },
---     b = { fg = colors.white, bg = "none" },
---     c = { fg = colors.white, bg = "none" },
---   },
--- }
---
--- require('lualine').setup {
---     -- options = {theme = 'horizon'}
---   options = {
---     theme = bubbles_theme,
---     component_separators = '|',
---     section_separators = { left = '', right = '' },
---   },
---   sections = {
---     lualine_a = {
---       { 'mode', separator = { right = '|' }, right_padding = 2 },
---     },
---     lualine_b = { 'filename', 'branch' },
---     lualine_c = { 'diagnostics' },
---     lualine_x = {},
---     lualine_y = {'filename','filesize', 'progress' },
---     lualine_z = {
---       { 'location', separator = { right = '' }, left_padding = 2 },
---     },
---   },
---   inactive_sections = {
---     -- lualine_a = { 'filename' },
---     -- lualine_b = {},
---     -- lualine_c = {},
---     -- lualine_x = {},
---     -- lualine_y = {},
---     -- lualine_z = { 'location' },
---   },
---   tabline = {},
---   extensions = {},
--- }
---
---require('lualine').setup {options = { theme  = 'dracula' },}
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
 local lualine = require('lualine')
 
--- Color table for highlights
--- stylua: ignore
 local colors = {
     bg       = 'none',
     fg       = '#bbc2cf',
@@ -185,6 +108,30 @@ ins_left {
     padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
+local mode_color = {
+    n = colors.blue,
+    i = colors.green,
+    v = colors.red,
+    [''] = colors.blue,
+    V = colors.red,
+    c = colors.magenta,
+    no = colors.red,
+    s = colors.orange,
+    S = colors.orange,
+    [''] = colors.orange,
+    ic = colors.yellow,
+    R = colors.violet,
+    Rv = colors.violet,
+    cv = colors.red,
+    ce = colors.red,
+    r = colors.cyan,
+    rm = colors.cyan,
+    ['r?'] = colors.cyan,
+    ['!'] = colors.red,
+    t = colors.red,
+}
+
+
 ins_left {
     -- mode component
     function()
@@ -192,28 +139,6 @@ ins_left {
     end,
     color = function()
         -- auto change color according to neovims mode
-        local mode_color = {
-            n = colors.blue,
-            i = colors.green,
-            v = colors.red,
-            [''] = colors.blue,
-            V = colors.red,
-            c = colors.magenta,
-            no = colors.red,
-            s = colors.orange,
-            S = colors.orange,
-            [''] = colors.orange,
-            ic = colors.yellow,
-            R = colors.violet,
-            Rv = colors.violet,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ['r?'] = colors.cyan,
-            ['!'] = colors.red,
-            t = colors.red,
-        }
         return { fg = mode_color[vim.fn.mode()] }
     end,
 
@@ -224,38 +149,11 @@ ins_left {
     'mode',
     color = function()
         -- auto change color according to neovims mode
-        local mode_color = {
-            n = colors.blue,
-            i = colors.green,
-            v = colors.red,
-            [''] = colors.blue,
-            V = colors.red,
-            c = colors.magenta,
-            no = colors.red,
-            s = colors.orange,
-            S = colors.orange,
-            [''] = colors.orange,
-            ic = colors.yellow,
-            R = colors.violet,
-            Rv = colors.violet,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ['r?'] = colors.cyan,
-            ['!'] = colors.red,
-            t = colors.red,
-        }
         return { fg = mode_color[vim.fn.mode()] }
     end,
 
 }
 
-ins_left {
-    -- filesize component
-    'filesize',
-    cond = conditions.buffer_not_empty,
-}
 --
 -- ins_left {
 --     'filename',
@@ -265,7 +163,7 @@ ins_left {
 
 ins_left { 'location' }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = colors.fg } }
 
 ins_left {
     'diagnostics',
@@ -307,14 +205,22 @@ ins_left {
 --     color = { fg = colors.fg, gui = 'bold' },
 -- }
 ins_left {
-    'filename'
+    -- 'filename',
+    "os.date('%H:%M')", 'data', "require'lsp-status'.status()",
+    color = { fg = colors.fg, gui = 'bold' }
 }
+
 ins_right {
     'branch',
     icon = '',
     color = { fg = colors.violet, gui = 'bold' },
 }
 
+ins_right {
+    -- filesize component
+    'filesize',
+    cond = conditions.buffer_not_empty,
+}
 ins_right {
     'diff',
     -- Is it me or the symbol for modified us really weird
@@ -333,28 +239,6 @@ ins_right {
     end,
     color = function()
         -- auto change color according to neovims mode
-        local mode_color = {
-            n = colors.blue,
-            i = colors.green,
-            v = colors.red,
-            [''] = colors.blue,
-            V = colors.red,
-            c = colors.magenta,
-            no = colors.red,
-            s = colors.orange,
-            S = colors.orange,
-            [''] = colors.orange,
-            ic = colors.yellow,
-            R = colors.violet,
-            Rv = colors.violet,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ['r?'] = colors.cyan,
-            ['!'] = colors.red,
-            t = colors.red,
-        }
         return { fg = mode_color[vim.fn.mode()] }
     end,
 

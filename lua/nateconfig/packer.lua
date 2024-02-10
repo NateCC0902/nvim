@@ -14,6 +14,20 @@ return require('packer').startup(function(use)
             require('treesj').setup({ --[[ your config ]] })
         end,
     })
+    use({
+        "jackMort/ChatGPT.nvim",
+        config = function()
+            require("chatgpt").setup()
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    })
+    use 'wfxr/minimap.vim'
+
+    use 'RRethy/vim-illuminate'
 
     use {
         'rmagatti/goto-preview',

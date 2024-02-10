@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+vim.keymap.set("n", "<leader>ch", "<cmd>ChatGPT<CR>")
+vim.keymap.set("n", "<leader>cc", "<cmd>ChatGPTEditWithInstructions<CR>")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
@@ -20,6 +22,7 @@ vim.keymap.set("n", "F3", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 vim.keymap.set("n", "F2", "<cmd>lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set("n", "<leader>cs", "<cmd>lua require'telescope.builtin'.colorscheme{} <CR>")
 
+vim.keymap.set("n","<C-m>", ":MinimapToggle<CR>")
 
 vim.keymap.set("v", "<leader>p", "\"_dP")
 
@@ -71,7 +74,6 @@ vim.api.nvim_set_keymap("i", "<A-CR>", 'copilot#Accept("<CR>")', { silent = true
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
-
 -- Bufferline
 --
 -- Move to previous/next

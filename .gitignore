@@ -1,2 +1,3 @@
 .DS_Store
 pack/github/start/copilot.vim/
+plugin/packer_compiled.lua
